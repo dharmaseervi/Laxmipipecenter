@@ -26,7 +26,7 @@ export default function Brand() {
         <div>
             <div className="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 justify-center items-center gap-4 px-4 py-4 bg-white  pt-10 " >
                 {brand.map((brand, index) => (
-                    <Link key={index} loading="lazy" className="shadow-md bg-white border-black justify-center items-center rounded-lg p-8  max-w-lg  gap-4 flex border bg-slate-400 hover:bg-slate-300" href={'/'} >
+                    <Link key={brand.id} loading="lazy" className="shadow-md bg-white border-black justify-center items-center rounded-lg p-8  max-w-lg  gap-4 flex border bg-slate-400 hover:bg-slate-300" href={'/'} >
                         <div className='w-44 h-24 flex justify-center items-center '>
                             <img className='object-cover ' src={brand.image} alt={brand.id} />
                         </div>

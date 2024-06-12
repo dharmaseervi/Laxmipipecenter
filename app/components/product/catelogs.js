@@ -79,7 +79,7 @@ export default function Catelogs() {
 
         <div className='grid lg:grid-cols-4 px-4 py-4 gap-4 justify-center items-center bg-white '>
             {productCat.map((item) => (
-                <Card className="mt-6 w-96 h-96 border border-black">
+                <Card key={item.id} className="mt-6 w-96 h-96 border border-black">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                             src={item.image}

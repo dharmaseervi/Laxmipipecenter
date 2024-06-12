@@ -79,7 +79,7 @@ export default function Product() {
             <div className='bg-gradient-to-r from-red-500 to-indigo-600 lg:px-10 lg:py-2 xl:rounded-xl xl:relative xl:top-20 justify-center items-center '>
                 <div className='grid  md:grid-cols-2  xl:grid-cols-4  justify-center  xl:rounded-xl  xl:relative xl:bottom-20 '>
                     {productCat.slice(0, 4).map((item) => (
-                        <Card className="mt-6 w-96 h-96 border">
+                        <Card key={item.id} className="mt-6 w-96 h-96 border">
                             <CardHeader color="blue-gray" className="relative h-56">
                                 <img
                                     src={item.image}
