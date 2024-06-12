@@ -87,15 +87,15 @@ export default function AboutUs() {
             <div className="space-y-4">
               <p className="text-xl font-medium">Laxmi Pipe Centre</p>
               <p className="text-lg">
-                📌 Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)
+                 Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)
               </p>
             </div>
             <div>
-              <p className="font-semibold">📧 Email us on:</p>
+              <p className="font-semibold"> Email us on:</p>
               <p className="underline text-lg">ghanshyamlal.10@gmail.com</p>
             </div>
             <div>
-              <p className="font-semibold">📞 Contact us:</p>
+              <p className="font-semibold"> Contact us:</p>
               <p className="underline text-lg">9480641307</p>
             </div>
           </div>
