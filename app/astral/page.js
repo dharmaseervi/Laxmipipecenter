@@ -128,7 +128,7 @@ export default function Astral() {
           <div className="bg-white p-10 rounded-lg shadow-lg max-w-lg w-full">
             <div className="mb-6 text-center">
               <h2 className="text-3xl font-bold mb-2">Get a Quote</h2>
-              <p className="text-gray-700">Fill out the form below and we'll get back to you.</p>
+              <p className="text-gray-700">Fill out the form below and we&apos;ll get back to you.</p>
             </div>
             <form className="space-y-4">
               <div>

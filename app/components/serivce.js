@@ -6,7 +6,7 @@ export default function Serivce() {
       <div className=' p-2 '>
         <p className='text-3xl font-medium mb-5'> Contact Us </p>
         <h1 className='text-5xl font-black mb-5 '> Do you have any question?  </h1>
-        <p className='text-gray-700 text-xl font-medium mb-5'  > We're known for our unbeatable customer service. Fee free to get in touch!  </p>
+        <p className='text-gray-700 text-xl font-medium mb-5'  > We&apos;re known for our unbeatable customer service. Fee free to get in touch!  </p>
         <p className='text-xl font-medium font-serif'>Laxmi Pipe Centre</p>
         <p className='text-xl font-medium font-serif mb-5'> Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)</p>
         <div className='mb-3'>

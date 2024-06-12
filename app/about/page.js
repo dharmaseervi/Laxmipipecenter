@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 
 export default function AboutUs() {
   return (
@@ -82,7 +81,7 @@ export default function AboutUs() {
             <p className="text-4xl font-semibold">Contact Us</p>
             <h1 className="text-5xl font-extrabold leading-tight">Do you have any questions?</h1>
             <p className="text-xl font-light">
-              We're known for our unbeatable customer service. Feel free to get in touch!
+            We&apos;re known for our unbeatable customer service. Feel free to get in touch!
             </p>
             <div className="space-y-4">
               <p className="text-xl font-medium">Laxmi Pipe Centre</p>
