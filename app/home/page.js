@@ -5,6 +5,7 @@ import Product from '../components/product'
 import HeroSection from '../components/hero'
 import ProductCategory from '../components/productCategory'
 import Serivce from '../components/serivce'
+import WorkingHourMap from '../components/WorkingHourMap'
 
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
             <HeroSection />
             <ProductCategory />
             <Serivce />
+            <WorkingHourMap />
         </div>
     )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function HeroSection() {
   return (
-    <section className=" px-10 py-12 pb-10 text-white bg-black">
+    <section className=" px-10 py-12 pb-10 text-white bg-white">
       <div className=" lg:grid lg:grid-cols-2 gap-2 ">
         <div className='cols-span-1 '>
           <img

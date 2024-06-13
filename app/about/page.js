@@ -9,7 +9,7 @@ export default function AboutUs() {
           {/* Header Section */}
           <section className="mb-16 text-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12 rounded-lg shadow-lg">
             <h1 className="text-4xl font-extrabold sm:text-5xl">
-              Welcome to <span className="text-yellow-300">Laxmi Pipe Center</span>
+              Welcome to <span className="text-yellow-300">Laxmi Pipe Centre</span>
             </h1>
             <p className="mt-4 text-lg">
               Your trusted distributor of high-quality plumbing solutions and piping systems.

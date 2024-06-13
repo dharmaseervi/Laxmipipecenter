@@ -75,11 +75,11 @@ export default function Product() {
     ]
 
     return (
-        <div className='bg-white  min-h-screen   flex xl:px-10 justify-center items-center  '>
-            <div className='bg-gradient-to-r from-red-500 to-indigo-600 lg:px-10 lg:py-2 xl:rounded-xl xl:relative xl:top-20 justify-center items-center '>
-                <div className='grid  md:grid-cols-2  xl:grid-cols-4  justify-center  xl:rounded-xl  xl:relative xl:bottom-20 '>
+        <div className='bg-white  2xl:min-h-screen flex 2xl:px-10 justify-center items-center '>
+            <div className='bg-gradient-to-r from-red-500 to-indigo-600 px-10 py-10 2xl:rounded-xl 2xl:relative 2xl:top-20 flex flex-col justify-center items-center '>
+                <div className='grid  lg:grid-cols-2  xl:grid-cols-3 2xl:grid-cols-4  justify-center  2xl:rounded-xl  2xl:relative 2xl:bottom-20 gap-10 '>
                     {productCat.slice(0, 4).map((item) => (
-                        <Card key={item.id} className="mt-6 w-96 h-96 border">
+                        <Card key={item.id} className="mt-6 w-80 h-96 border">
                             <CardHeader color="blue-gray" className="relative h-56">
                                 <img
                                     src={item.image}
