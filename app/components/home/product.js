@@ -76,7 +76,7 @@ export default function Product() {
 
     return (
         <div className='bg-white  2xl:min-h-screen flex 2xl:px-10 justify-center items-center '>
-            <div className='bg-gradient-to-r from-red-500 to-indigo-600 px-10 py-10 2xl:rounded-xl 2xl:relative 2xl:top-20 flex flex-col justify-center items-center '>
+            <div className='sm:bg-white 2xl:bg-gradient-to-r from-red-500 to-indigo-600 px-10 py-10 2xl:rounded-xl 2xl:relative 2xl:top-20 flex flex-col justify-center items-center '>
                 <div className='grid  lg:grid-cols-2  xl:grid-cols-3 2xl:grid-cols-4  justify-center  2xl:rounded-xl  2xl:relative 2xl:bottom-20 gap-10 '>
                     {productCat.slice(0, 4).map((item) => (
                         <Card key={item.id} className="mt-6 w-80 h-96 border">
@@ -97,11 +97,11 @@ export default function Product() {
                         </Card>
                     ))}
                 </div>
-                <div className='flex justify-center items-center flex-col gap-2 mb-10 p-8'>
-                    <h1 className='text-4xl font-medium'>
+                <div className='flex justify-center items-center flex-col gap-5 mb-10 p-8'>
+                    <h1 className='text-4xl font-medium text-black  2xl:text-white'>
                         Astral Pipes
                     </h1>
-                    <p className='text-gray-400'>
+                    <p className='text-gray-900 2xl:text-gray-400'>
                         Astral stands for innovation and setting new trends in the piping industry. Bringing newer piping technologies and continuous innovation in existing as well as new products has been the focal point at Astral. This special emphasis helps the brand set the bar higher and lead amongst others by example.
                     </p>
                 </div>
