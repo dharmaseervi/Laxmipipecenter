@@ -60,15 +60,15 @@ export default function Serivce() {
         <p className='text-3xl font-medium mb-5'> Contact Us </p>
         <h1 className='text-5xl font-black mb-5 '> Do you have any question?  </h1>
         <p className='text-gray-700 text-xl font-medium mb-5'  > We&apos;re known for our unbeatable customer service. Fee free to get in touch!  </p>
-        <p className='text-xl font-medium font-serif'>Laxmi Pipe Centre</p>
-        <p className='text-xl font-medium font-serif mb-5'> Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)</p>
+        <p className='text-xl font-medium font-serif text-white'>Laxmi Pipe Centre</p>
+        <p className='text-xl font-medium font-serif mb-5 text-white'> Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)</p>
         <div className='mb-3'>
-          <p className='font-black'>Email us on:</p>
-          <a className='underline' href='mailto:ghanshyamlal.10@gmail.com'>ghanshyamlal.10@gmail.com</a>
+          <p className='font-black text-white'>Email us on:</p>
+          <a className='underline text-white' href='mailto:ghanshyamlal.10@gmail.com'>ghanshyamlal.10@gmail.com</a>
         </div>
         <div>
-          <p className=' font-black'> Contact us :</p>
-          <a className='underline' href='tel:9480641307'>9480641307</a>
+          <p className=' font-black text-white'> Contact us :</p>
+          <a className='underline text-white' href='tel:9480641307'>9480641307</a>
         </div>
       </div>
       <div>
@@ -81,7 +81,7 @@ export default function Serivce() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full border bg-transparent py-3 px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-full text-white border bg-transparent py-3 px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 placeholder="Your name"
                 required
               />
@@ -93,7 +93,7 @@ export default function Serivce() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full border bg-transparent py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-full text-white border bg-transparent py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 placeholder="Your email"
                 required
               />
@@ -105,7 +105,7 @@ export default function Serivce() {
                 name="number"
                 value={formData.number}
                 onChange={handleChange}
-                className="mt-1 block w-full border bg-transparent py-3 px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-full border text-white bg-transparent py-3 px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 placeholder="Your number"
                 required
               />
@@ -116,7 +116,7 @@ export default function Serivce() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="mt-1 block w-full border bg-transparent py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="mt-1 block w-full border text-white bg-transparent py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 rows="4"
                 placeholder="Your message"
                 required

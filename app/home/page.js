@@ -6,6 +6,7 @@ import HeroSection from '../components/hero'
 import ProductCategory from '../components/productCategory'
 import Serivce from '../components/serivce'
 import WorkingHourMap from '../components/WorkingHourMap'
+import Whatsapp from '../components/whatsapp'
 
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
             <ProductCategory />
             <Serivce />
             <WorkingHourMap />
+            <Whatsapp />
         </div>
     )
 }
