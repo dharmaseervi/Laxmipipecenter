@@ -94,9 +94,6 @@ export default function Product() {
                                     {item.subtitle}
                                 </Typography>
                             </CardBody>
-                            <CardFooter className="pt-0">
-                                <Button>Read More</Button>
-                            </CardFooter>
                         </Card>
                     ))}
                 </div>

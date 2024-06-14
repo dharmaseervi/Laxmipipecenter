@@ -1,6 +1,59 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 
 export default function Serivce() {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSuccess('Thank you for your message! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          number: '',
+        });
+      } else {
+        throw new Error('Something went wrong');
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+
+    setIsSubmitting(false);
+  };
   return (
     <section className="py-12 px-12 bg-customColor  grid md:grid-cols-2  ">
       <div className='p-2 '>
@@ -23,17 +76,62 @@ export default function Serivce() {
           <form className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700">Name</label>
-              <input type="text" className="mt-1 block w-full border border-gray-800 py-3 shadow-sm bg-transparent" />
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 block w-full border bg-transparent py-3 px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                placeholder="Your name"
+                required
+              />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">Email</label>
-              <input type="email" className="mt-1 block w-full border border-gray-800 py-3 shadow-sm bg-transparent" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 block w-full border bg-transparent py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                placeholder="Your email"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Mobile No</label>
+              <input
+                type="number"
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                className="mt-1 block w-full border bg-transparent py-3 px-4  shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                placeholder="Your number"
+                required
+              />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">Message</label>
-              <textarea className="mt-1 block w-full border border-gray-800 py-3 shadow-sm bg-transparent"></textarea>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="mt-1 block w-full border bg-transparent py-3 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                rows="4"
+                placeholder="Your message"
+                required
+              ></textarea>
             </div>
-            <button type="submit" className="px-6 py-4 bg-black border text-white rounded-md ">Send Message</button>
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-600 hover:to-pink-600 transition-transform transform hover:scale-105"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
+            {success && <p className="text-green-500 mt-4">{success}</p>}
+            {error && <p className="text-red-500 mt-4">{error}</p>}
           </form>
         </div>
       </div>

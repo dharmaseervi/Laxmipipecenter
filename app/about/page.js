@@ -1,7 +1,59 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function AboutUs() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSuccess('Thank you for your message! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          number: '',
+        });
+      } else {
+        throw new Error('Something went wrong');
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <>
       <div className="bg-gray-50 py-12 px-6 sm:px-12 lg:px-24">
@@ -71,7 +123,6 @@ export default function AboutUs() {
           </section>
 
         </div>
-
       </div>
       {/* Contact Us */}
       <section className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 py-16 px-6 sm:px-12 lg:px-24 text-white w-full ">
@@ -81,12 +132,12 @@ export default function AboutUs() {
             <p className="text-4xl font-semibold">Contact Us</p>
             <h1 className="text-5xl font-extrabold leading-tight">Do you have any questions?</h1>
             <p className="text-xl font-light">
-            We&apos;re known for our unbeatable customer service. Feel free to get in touch!
+              We&apos;re known for our unbeatable customer service. Feel free to get in touch!
             </p>
             <div className="space-y-4">
               <p className="text-xl font-medium">Laxmi Pipe Centre</p>
               <p className="text-lg">
-                 Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)
+                Shop No.39, Nandan Complex, Dr Rajkumar Road, Yaraganahalli, Mysore - 570029 (Near Ganapathi Temple)
               </p>
             </div>
             <div>
@@ -101,37 +152,64 @@ export default function AboutUs() {
 
           {/* Contact Form Section */}
           <div className="bg-white p-10 rounded-2xl shadow-2xl text-gray-800 transform transition-transform hover:scale-105">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-sm font-medium text-gray-700">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 py-3 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                   placeholder="Your name"
+                  required
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 py-3 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                   placeholder="Your email"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Mobile No</label>
+                <input
+                  type="number"
+                  name="number"
+                  value={formData.number}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border border-gray-300 py-3 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                  placeholder="Your number"
+                  required
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="mt-1 block w-full border border-gray-300 py-3 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                   rows="4"
                   placeholder="Your message"
+                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-lg shadow-lg hover:from-purple-600 hover:to-pink-600 transition-transform transform hover:scale-105"
+                disabled={isSubmitting}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              {success && <p className="text-green-500 mt-4">{success}</p>}
+              {error && <p className="text-red-500 mt-4">{error}</p>}
             </form>
           </div>
         </div>

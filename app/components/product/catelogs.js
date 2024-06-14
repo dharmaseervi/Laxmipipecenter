@@ -77,29 +77,28 @@ export default function Catelogs() {
     return (
 
 
-        <div className='grid lg:grid-cols-4 px-4 py-4 gap-4 justify-center items-center bg-white '>
-            {productCat.map((item) => (
-                <Card key={item.id} className="mt-6 w-96 h-96 border border-black">
-                    <CardHeader color="blue-gray" className="relative h-56">
-                        <img
-                            src={item.image}
-                            alt="card-image"
-                        />
-                    </CardHeader>
-                    <CardBody>
-                        <Typography variant="h5" color="blue-gray" className="mb-2">
-                            {item.title}
-                        </Typography>
-                        <Typography>
-                            {item.subtitle}
-                        </Typography>
-                    </CardBody>
-                    <CardFooter className="pt-0">
-                        <Button>Read More</Button>
-                    </CardFooter>
-                </Card>
-            ))}
+        <div className='flex justify-center items-start bg-white'>
+            <div className='grid lg:grid-cols-2 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1  py-4 gap-10 justify-center items-center bg-white '>
+                {productCat.map((item) => (
+                    <Card key={item.id} className="mt-6 xl:w-72 2xl:w-96 w-96 h-96 border border-black">
+                        <CardHeader color="blue-gray" className="relative h-56">
+                            <img
+                                src={item.image}
+                                alt="card-image"
+                            />
+                        </CardHeader>
+                        <CardBody>
+                            <Typography variant="h5" color="blue-gray" className="mb-2">
+                                {item.title}
+                            </Typography>
+                            <Typography>
+                                {item.subtitle}
+                            </Typography>
+                        </CardBody>
+                    </Card>
+                ))}
 
+            </div>
         </div>
     )
 }

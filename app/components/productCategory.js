@@ -13,25 +13,25 @@ export default function ProductCategory() {
                         title="Astral Pipes"
                         image="/astral.png"
                         description="High-quality plumbing solutions for residential and commercial applications."
-                        link="/products/astral-pipes"
+                       
                     />
                     <CategoryCard
                         title="Jaquar Bath"
                         image="/jaquar.webp"
                         description="Elegant and durable bathroom fittings from Jaquar."
-                        link="/products/jaquar-bath"
+                       
                     />
                     <CategoryCard
                         title="Parryware Faucets"
                         image="/parryware.jpeg"
                         description="Innovative and stylish faucets from Parryware."
-                        link="/products/parryware-faucets"
+                       
                     />
                     <CategoryCard
                         title="Onida Taps"
                         image="/onida.webp"
                         description="Reliable and high-performance taps from Onida."
-                        link="/products/onida-taps"
+                       
                     />
                 </div>
             </div>
@@ -44,7 +44,6 @@ function CategoryCard({ title, image, description, link }) {
             <img src={image} alt={title} className="h-40 w-full object-cover rounded-md" />
             <h3 className="text-xl font-bold mt-4">{title}</h3>
             <p className="mt-2 text-gray-600">{description}</p>
-            <Link href={link} className="text-blue-600 mt-4 inline-block">View Details</Link>
         </div>
     );
 }
